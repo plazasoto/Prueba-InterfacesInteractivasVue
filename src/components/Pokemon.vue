@@ -39,6 +39,8 @@ export default {
       console.log(this.pokemonName.toLowerCase())
       if ( this.enteredName.toLowerCase() == this.pokemonName.toLowerCase()) {
         this.uncovered = true;
+        //aumentar contador
+        this.$emit('count-up');
       }
       else{
         alert("Nombre incorrecto")
@@ -56,6 +58,4 @@ export default {
   .hiddenImg{
     filter: blur(5px) grayscale(100%);
   }
-
-  
 </style>

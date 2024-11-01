@@ -32,7 +32,8 @@ export default {
 
 <template>
   <header>
-
+    <h1>¿Quién es ese Pokémon?</h1>
+    <h4>Pokémones descubiertos: <span>0</span></h4>
   </header>
 
   <main v-for="(pkmn, index) in pokemonList">

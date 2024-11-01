@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <img :src="pokemonSprite" alt="">
-    {{ pokemonName }}
+  <div >
+    <img :src="pokemonSprite" alt="" :class="{hiddenImg: !uncovered}" >
+    <input v-if="!uncovered" type="text" name="" id="" >
+    <button v-if="!uncovered" >Descubrir</button>
+    <p v-if="uncovered"> {{ pokemonName }} </p>
   </div>
 </template>
 
@@ -16,6 +18,7 @@ export default {
     return {
       pokemonName: "",
       pokemonSprite: "",
+      uncovered: false,
     }
   },
 
@@ -25,6 +28,10 @@ export default {
       this.pokemonName = data.name;
       this.pokemonSprite = data.sprites.front_default;
     },
+
+    uncover(){
+      //
+    },
   },
 
   async mounted() {
@@ -32,3 +39,13 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+  .hiddenImg{
+    filter: blur(5px) grayscale(100%);
+  }
+
+/*   .block{
+    display: block;
+  } */
+</style>
